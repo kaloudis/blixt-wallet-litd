@@ -18,7 +18,7 @@ jobs:
       - persist_to_workspace:
           root: /go/src/github.com/lightningnetwork/lnd
           paths:
-            - mobile/build/android/Lndmobile.aar
+            - mobile/build/android/Litdmobile.aar
   build_blixt:
     docker:
       - image: blixtwallet/blixtwallet:latest
@@ -26,7 +26,7 @@ jobs:
       - attach_workspace:
           at: /go/src/github.com/lightningnetwork/lnd
       - checkout
-      - run: cp /go/src/github.com/lightningnetwork/lnd/mobile/build/android/Lndmobile.aar android/lndmobile
+      - run: cp /go/src/github.com/lightningnetwork/lnd/mobile/build/android/Litdmobile.aar android/litdmobile
       - run: yarn
       - run: git submodule update --init
       - run: yarn build-tor-lib

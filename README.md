@@ -64,7 +64,7 @@ It's useful if you want to make design and GUI changes.
 
 - Install [Node](https://nodejs.org), [Yarn](https://classic.yarnpkg.com) and [Android Studio + Android SDK (including NDK)](https://developer.android.com/studio/)
 - If needed, install an emulated android device inside Android Studio
-- Download lnd binary from [from the latest Blixt Wallet release](https://github.com/hsjoberg/blixt-wallet/releases) and put it in `android/lndmobile`. Alternatively build lnd for Android by following the steps in [build-android-aar.md](build-android-aar.md)
+- Download lnd binary from [from the latest Blixt Wallet release](https://github.com/hsjoberg/blixt-wallet/releases) and put it in `android/litdmobile`. Alternatively build lnd for Android by following the steps in [build-android-aar.md](build-android-aar.md)
 - Get the tor sub-module: `git submodule update --init`
 - Install Node packages: `yarn`
 - Compile the Tor Android lib: `yarn build-tor-lib`

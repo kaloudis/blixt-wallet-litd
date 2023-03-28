@@ -15,10 +15,10 @@ import android.util.Base64;
 import android.util.Log;
 
 
-import lndmobile.Callback;
-import lndmobile.Lndmobile;
-import lndmobile.RecvStream;
-import lndmobile.SendStream;
+import litdmobile.Callback;
+import litdmobile.Litdmobile;
+import litdmobile.RecvStream;
+import litdmobile.SendStream;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -150,17 +150,17 @@ public class LndMobileService extends Service {
               }
 
             } catch (IllegalAccessException e) {
-              Log.e(TAG, "Could not invoke lndmobile method " + method, e);
+              Log.e(TAG, "Could not invoke litdmobile method " + method, e);
               // TODO(hsjoberg) send error response to client?
             } catch (InvocationTargetException e) {
-              Log.e(TAG, "Could not invoke lndmobile method " + method, e);
+              Log.e(TAG, "Could not invoke litdmobile method " + method, e);
               // TODO(hsjoberg) send error response to client?
             }
 
             break;
 
           case MSG_CHECKSTATUS:
-            // lndmobile.Lndmobile.getStatus(new lndmobile.LndStatusCallback() {
+            // litdmobile.Litdmobile.getStatus(new litdmobile.LndStatusCallback() {
             //   @Override
             //   public void onResponse(boolean b, boolean b1) {
             //     HyperLog.i(TAG, "lnd started" + b);
@@ -204,7 +204,7 @@ public class LndMobileService extends Service {
             lnrpc.Walletunlocker.UnlockWalletRequest.Builder unlockWallet = lnrpc.Walletunlocker.UnlockWalletRequest.newBuilder();
             unlockWallet.setWalletPassword(ByteString.copyFromUtf8(password));
 
-            Lndmobile.unlockWallet(
+            Litdmobile.unlockWallet(
               unlockWallet.build().toByteArray(),
               new LndCallback(msg.replyTo, "UnlockWallet", request)
             );
@@ -236,7 +236,7 @@ public class LndMobileService extends Service {
               );
             }
 
-            Lndmobile.initWallet(
+            Litdmobile.initWallet(
               initWallet.build().toByteArray(),
               new LndCallback(msg.replyTo, "InitWallet", request)
             );
@@ -258,7 +258,7 @@ public class LndMobileService extends Service {
     }
   }
 
-  class LndCallback implements lndmobile.Callback {
+  class LndCallback implements litdmobile.Callback {
     private final Messenger recipient;
     private final String method;
     private final int request;
@@ -312,7 +312,7 @@ public class LndMobileService extends Service {
     }
   }
 
-  class LndStreamCallback implements lndmobile.RecvStream {
+  class LndStreamCallback implements litdmobile.RecvStream {
     private final Messenger recipient;
     private final String method;
 
@@ -373,11 +373,11 @@ public class LndMobileService extends Service {
 
       @Override
       public void run() {
-        Lndmobile.start(args, new lndmobile.Callback() {
+        Litdmobile.start(args, new litdmobile.Callback() {
 
           @Override
           public void onError(Exception e) {
-            HyperLog.e(TAG, "Could not invoke Lndmobile.start()", e);
+            HyperLog.e(TAG, "Could not invoke Litdmobile.start()", e);
 
             Message msg = Message.obtain(null, MSG_START_LND_RESULT, request, 0);
 
@@ -461,7 +461,7 @@ public class LndMobileService extends Service {
   }
 
   public LndMobileService() {
-    Method[] methods = Lndmobile.class.getDeclaredMethods();
+    Method[] methods = Litdmobile.class.getDeclaredMethods();
 
     for (Method m : methods) {
       String name = m.getName();
@@ -507,7 +507,7 @@ public class LndMobileService extends Service {
   }
 
   private void stopLnd(Messenger recipient, int request) {
-    Lndmobile.stopDaemon(
+    Litdmobile.stopDaemon(
       lnrpc.LightningOuterClass.StopRequest.newBuilder().build().toByteArray(),
       new Callback() {
         @Override

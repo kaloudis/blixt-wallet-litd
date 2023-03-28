@@ -10,7 +10,7 @@ import { IStoreModel } from "./index";
 import { IChannelEvent, getChannelEvents, createChannelEvent } from "../storage/database/channel-events";
 import { bytesToHexString, toast } from "../utils";
 import { LndMobileEventEmitter } from "../utils/event-listener";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 
 import logger from "./../utils/log";
 const log = logger("Channel");

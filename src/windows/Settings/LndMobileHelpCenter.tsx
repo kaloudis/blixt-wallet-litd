@@ -3,11 +3,11 @@ import { StyleSheet, View, NativeModules, EmitterSubscription } from "react-nati
 import { Card, Text, CardItem, H1, Button, Spinner } from "native-base";
 
 import Blurmodal from "../../components/BlurModal";
-import { getInfo, ELndMobileStatusCodes, startLnd } from "../../lndmobile";
-import { newAddress } from "../../lndmobile/onchain";
+import { getInfo, ELndMobileStatusCodes, startLnd } from "../../litdmobile";
+import { newAddress } from "../../litdmobile/onchain";
 import { toast } from "../../utils";
 import { getWalletPassword } from "../../storage/keystore";
-import { unlockWallet } from "../../lndmobile/wallet";
+import { unlockWallet } from "../../litdmobile/wallet";
 import { blixtTheme } from "../../native-base-theme/variables/commonColor";
 import Color from "color";
 import Clipboard from "@react-native-community/clipboard";

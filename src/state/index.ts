@@ -28,7 +28,7 @@ import { IICloudBackupModel, iCloudBackup } from "./ICloudBackup";
 import { IBlixtLsp, blixtLsp } from "./BlixtLsp";
 import { IContactsModel, contacts } from "./Contacts";
 
-import { ELndMobileStatusCodes } from "../lndmobile/index";
+import { ELndMobileStatusCodes } from "../litdmobile/index";
 import { clearApp, setupApp, getWalletCreated, StorageItem, getItem as getItemAsyncStorage, getItemObject as getItemObjectAsyncStorage, setItemObject, setItem, getAppVersion, setAppVersion, getAppBuild, setAppBuild, getRescanWallet, setRescanWallet } from "../storage/app";
 import { openDatabase, setupInitialSchema, deleteDatabase, dropTables } from "../storage/database/sqlite";
 import { clearTransactions } from "../storage/database/transaction";
@@ -41,7 +41,7 @@ import { LndMobileEventEmitter } from "../utils/event-listener";
 import { lnrpc } from "../../proto/lightning";
 import { toast } from "../utils";
 import { Alert } from "../utils/alert";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 
 import logger from "./../utils/log";
 const log = logger("Store");

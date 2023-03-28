@@ -12,7 +12,7 @@ import { timeout, decodeTLVRecord, bytesToHexString, toast, uint8ArrayToUnicodeS
 import { TLV_RECORD_NAME, TLV_WHATSAT_MESSAGE } from "../utils/constants";
 import { identifyService } from "../utils/lightning-services";
 import { LndMobileEventEmitter } from "../utils/event-listener";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 
 import logger from "./../utils/log";
 const log = logger("Receive");

@@ -5,7 +5,7 @@ import Long from "long";
 import sha from "sha.js";
 import { stringToUint8Array, hexToUint8Array, unicodeStringToUint8Array } from "../utils";
 import { TLV_KEYSEND, TLV_RECORD_NAME, TLV_WHATSAT_MESSAGE } from "../utils/constants";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 import { LndMobileEventEmitter } from "../utils/event-listener";
 import { getChanInfo, listPrivateChannels } from "./channel";
 const { LndMobile, LndMobileTools } = NativeModules;

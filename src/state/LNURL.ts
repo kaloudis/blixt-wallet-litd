@@ -13,7 +13,7 @@ import { IStoreInjections } from "./store";
 import { timeout, bytesToString, getDomainFromURL, stringToUint8Array, hexToUint8Array, bytesToHexString, toast } from "../utils/index";
 import { lnrpc } from "../../proto/lightning";
 import { LndMobileEventEmitter } from "../utils/event-listener";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 import { Alert } from "../utils/alert";
 import { dunderPrompt } from "../utils/dunder";
 

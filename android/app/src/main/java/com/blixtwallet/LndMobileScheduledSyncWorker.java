@@ -44,7 +44,7 @@ import com.hypertrack.hyperlog.HyperLog;
 
 public class LndMobileScheduledSyncWorker extends ListenableWorker {
   private final String TAG = "LndScheduledSyncWorker";
-  private final String HANDLERTHREAD_NAME = "blixt_lndmobile_sync";
+  private final String HANDLERTHREAD_NAME = "blixt_litdmobile_sync";
   private ResolvableFuture future = ResolvableFuture.create();
   private Handler incomingHandler;
   private boolean lndMobileServiceBound = false;
@@ -282,7 +282,7 @@ public class LndMobileScheduledSyncWorker extends ListenableWorker {
     };
     // FIXME(hsjoberg):
     // Calling thread.start() causes fatal exception:
-    // java.lang.RuntimeException: Can't create handler inside thread Thread[blixt_lndmobile_sync,5,main] that has not called Looper.prepare()
+    // java.lang.RuntimeException: Can't create handler inside thread Thread[blixt_litdmobile_sync,5,main] that has not called Looper.prepare()
     // Calling run instead, this is really wrong through.
     // Maybe use AsyncTask instead?
     thread.run();

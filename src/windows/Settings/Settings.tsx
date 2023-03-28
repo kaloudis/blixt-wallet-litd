@@ -14,7 +14,7 @@ import Content from "../../components/Content";
 import { useStoreActions, useStoreState } from "../../state/store";
 import { LoginMethods } from "../../state/Security";
 import { BitcoinUnits, IBitcoinUnits } from "../../utils/bitcoin-units";
-import { getChanInfo, verifyChanBackup } from "../../lndmobile/channel";
+import { getChanInfo, verifyChanBackup } from "../../litdmobile/channel";
 import { camelCaseToSpace, formatISO, toast } from "../../utils";
 import { MapStyle } from "../../utils/google-maps";
 import { LndLogLevel, OnchainExplorer } from "../../state/Settings";
@@ -23,7 +23,7 @@ import { DEFAULT_DUNDER_SERVER, DEFAULT_INVOICE_EXPIRY, DEFAULT_LND_LOG_LEVEL, D
 import { IFiatRates } from "../../state/Fiat";
 import BlixtWallet from "../../components/BlixtWallet";
 import { Alert } from "../../utils/alert";
-import { getNodeInfo, resetMissionControl } from "../../lndmobile";
+import { getNodeInfo, resetMissionControl } from "../../litdmobile";
 
 import { useTranslation } from "react-i18next";
 import { languages, namespaces } from "../../i18n/i18n.constants";

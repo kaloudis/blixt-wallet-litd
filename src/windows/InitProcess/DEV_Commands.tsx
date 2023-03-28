@@ -15,13 +15,13 @@ import { Alert } from "../../utils/alert";
 import { getTransactions, getTransaction, createTransaction, clearTransactions } from "../../storage/database/transaction";
 import { useStoreState, useStoreActions } from "../../state/store";
 import { invoicesrpc, lnrpc } from "../../../proto/lightning";
-import { sendCommand } from "../../lndmobile/utils";
-import { getInfo, connectPeer, listPeers, decodePayReq, queryRoutes, checkStatus, getNodeInfo, listUnspent, getNetworkInfo } from "../../lndmobile/index";
-import { initWallet, genSeed, deriveKey, signMessage, derivePrivateKey } from "../../lndmobile/wallet";
-import { pendingChannels, listChannels, openChannel, closeChannel } from "../../lndmobile/channel";
-import { newAddress, sendCoins } from "../../lndmobile/onchain";
+import { sendCommand } from "../../litdmobile/utils";
+import { getInfo, connectPeer, listPeers, decodePayReq, queryRoutes, checkStatus, getNodeInfo, listUnspent, getNetworkInfo } from "../../litdmobile/index";
+import { initWallet, genSeed, deriveKey, signMessage, derivePrivateKey } from "../../litdmobile/wallet";
+import { pendingChannels, listChannels, openChannel, closeChannel } from "../../litdmobile/channel";
+import { newAddress, sendCoins } from "../../litdmobile/onchain";
 import { storage, StorageItem, setItemObject, getItem, setItem } from "../../storage/app";
-import { status, modifyStatus, queryScores } from "../../lndmobile/autopilot";
+import { status, modifyStatus, queryScores } from "../../litdmobile/autopilot";
 import { RootStackParamList } from "../../Main";
 import { setWalletPassword, getWalletPassword, getItemObject, getPin } from "../../storage/keystore";
 import Content from "../../components/Content";
@@ -324,9 +324,9 @@ export default function DEV_Commands({ navigation, continueCallback }: IProps) {
             console.log("ReactNativeElectron.getInitialURL()", await ReactNativeElectron.getInitialURL());
           }}><Text style={styles.buttonText}>ReactNativeElectron.getInitialURL()</Text></Button>
           <Button small onPress={async () => {
-            console.log("lndmobile", lndmobile);
-            console.log("lndmobile.hello()", await lndmobile.hello((t) => console.log(t)));
-          }}><Text style={styles.buttonText}>lndmobile.hello()</Text></Button>
+            console.log("litdmobile", litdmobile);
+            console.log("litdmobile.hello()", await litdmobile.hello((t) => console.log(t)));
+          }}><Text style={styles.buttonText}>litdmobile.hello()</Text></Button>
 
           <Text style={{ width: "100%"}}>iOS LndMobile:</Text>
           <Button small onPress={async () => {
@@ -348,7 +348,7 @@ export default function DEV_Commands({ navigation, continueCallback }: IProps) {
             new NativeEventEmitter(NativeModules.LndMobile).addListener("WalletUnlocked", (event: any) => {
               console.log(event);
             })
-          }}><Text style={styles.buttonText}>Lndmobile add listener</Text></Button>
+          }}><Text style={styles.buttonText}>Litdmobile add listener</Text></Button>
 
           <Button small onPress={async () => {
             const request = lnrpc.InitWalletRequest.create({
@@ -474,7 +474,7 @@ export default function DEV_Commands({ navigation, continueCallback }: IProps) {
             actions.changeOnboardingState("DONE");
           }}><Text style={styles.buttonText}>onboardingState = DONE</Text></Button>
 
-          <Text style={{ width: "100%" }}>lndmobile:</Text>
+          <Text style={{ width: "100%" }}>litdmobile:</Text>
           <Button small onPress={async () => await NativeModules.LndMobile.initialize()}><Text style={styles.buttonText}>LndMobile.initialize()</Text></Button>
           <Button small onPress={async () => {
             console.log(await checkStatus());
@@ -671,7 +671,7 @@ export default function DEV_Commands({ navigation, continueCallback }: IProps) {
           <Button small onPress={async () => console.log(await getTransaction(db!, 1))}><Text style={styles.buttonText}>getTransaction(1)</Text></Button>
           <Button small onPress={async () => console.log(await clearTransactions(db!))}><Text style={styles.buttonText}>actions.clearTransactions()</Text></Button>
 
-          <Text style={{ width: "100%" }}>Lndmobile commands:</Text>
+          <Text style={{ width: "100%" }}>Litdmobile commands:</Text>
           {[
             ["getInfo", getInfo],
             ["genSeed", genSeed],

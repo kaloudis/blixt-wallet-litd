@@ -32,7 +32,7 @@ import {
   sendPaymentSync,
   sendPaymentV2Sync,
   IReadLndLogResponse,
-} from "../lndmobile/index";
+} from "../litdmobile/index";
 import {
   channelBalance,
   closeChannel,
@@ -43,7 +43,7 @@ import {
   decodeChannelEvent,
   exportAllChannelBackups,
   abandonChannel,
-} from "../lndmobile/channel";
+} from "../litdmobile/channel";
 import {
   getTransactions,
   newAddress,
@@ -51,7 +51,7 @@ import {
   sendCoinsAll,
   walletBalance,
   subscribeTransactions,
-} from "../lndmobile/onchain";
+} from "../litdmobile/onchain";
 import {
   decodeInvoiceResult,
   genSeed,
@@ -63,18 +63,18 @@ import {
   verifyMessageNodePubkey,
   signMessage,
   signMessageNodePubkey,
-} from "../lndmobile/wallet";
+} from "../litdmobile/wallet";
 import {
   status,
   modifyStatus,
   queryScores,
   setScores,
-} from "../lndmobile/autopilot";
+} from "../litdmobile/autopilot";
 import {
   checkScheduledSyncWorkStatus
-} from "../lndmobile/scheduled-sync"; // TODO(hsjoberg): This could be its own injection "LndMobileScheduledSync"
+} from "../litdmobile/scheduled-sync"; // TODO(hsjoberg): This could be its own injection "LndMobileScheduledSync"
 import { lnrpc, signrpc, invoicesrpc, autopilotrpc, routerrpc } from "../../proto/lightning";
-import { WorkInfo } from "../lndmobile/LndMobile";
+import { WorkInfo } from "../litdmobile/LndMobile";
 
 export interface ILndMobileInjections {
   index: {

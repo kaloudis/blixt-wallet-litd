@@ -8,7 +8,7 @@ import { waitUntilTrue, timeout, toast } from "../utils";
 import { uploadFileAsString, getFiles, checkResponseIsError, downloadFileAsString } from "../utils/google-drive";
 import { Chain, Debug } from "../utils/build";
 import { getItemObject, StorageItem, setItemObject } from "../storage/app";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 import { LndMobileEventEmitter } from "../utils/event-listener";
 
 import logger from "./../utils/log";

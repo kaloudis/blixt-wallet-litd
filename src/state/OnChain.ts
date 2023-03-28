@@ -4,9 +4,9 @@ import Long from "long";
 import { IStoreModel } from "./index";
 import { IStoreInjections } from "./store";
 import { lnrpc } from "../../proto/lightning";
-import { decodeSubscribeTransactionsResult } from "../lndmobile/onchain";
+import { decodeSubscribeTransactionsResult } from "../litdmobile/onchain";
 import { LndMobileEventEmitter } from "../utils/event-listener";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 import { toast } from "../utils";
 
 import logger from "./../utils/log";

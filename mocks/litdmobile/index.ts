@@ -4,7 +4,7 @@ import { DeviceEventEmitter } from "react-native";
 import * as base64 from "base64-js";
 import payReq from "bolt11";
 import Long from "long";
-import { IAddInvoiceBlixtLspArgs } from "../../src/lndmobile";
+import { IAddInvoiceBlixtLspArgs } from "../../src/litdmobile";
 import { bytesToHexString } from "../../src/utils";
 
 export enum ELndMobileStatusCodes {

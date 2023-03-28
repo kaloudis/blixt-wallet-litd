@@ -6,7 +6,7 @@ import { IStoreInjections } from "./store";
 import { bytesToHexString, stringToUint8Array, timeout } from "../utils";
 import { IStoreModel } from "./index";
 import { LndMobileEventEmitter } from "../utils/event-listener";
-import { checkLndStreamErrorResponse } from "../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../utils/litdmobile";
 import * as base64 from "base64-js";
 import { PLATFORM } from "../utils/constants";
 

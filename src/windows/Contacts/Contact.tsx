@@ -14,10 +14,10 @@ import { Alert } from "../../utils/alert";
 import { ILNUrlWithdrawRequest } from "../../state/LNURL";
 import ButtonSpinner from "../../components/ButtonSpinner";
 import { LndMobileEventEmitter } from "../../utils/event-listener";
-import { decodeInvoiceResult } from "../../lndmobile/wallet";
+import { decodeInvoiceResult } from "../../litdmobile/wallet";
 import { lnrpc } from "../../../proto/lightning";
 import { Chain } from "../../utils/build";
-import { checkLndStreamErrorResponse } from "../../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../../utils/litdmobile";
 import { fontFactorNormalized } from "../../utils/scale";
 
 import { useTranslation } from "react-i18next";

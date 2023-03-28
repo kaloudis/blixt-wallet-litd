@@ -6,8 +6,8 @@ import { Chain, Debug } from "../utils/build";
 import { lnrpc } from "../../proto/lightning";
 import { IStoreModel } from ".";
 import logger from "./../utils/log";
-import { listPrivateChannels, getChanInfo } from "../lndmobile/channel";
-import { getNodeInfo } from "../lndmobile";
+import { listPrivateChannels, getChanInfo } from "../litdmobile/channel";
+import { getNodeInfo } from "../litdmobile";
 
 const log = logger("LightName");
 

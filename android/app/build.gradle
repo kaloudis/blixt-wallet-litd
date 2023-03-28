@@ -315,7 +315,7 @@ dependencies {
 
     implementation "com.github.mmin18:realtimeblurview:1.2.1"
 
-    implementation project(":lndmobile")
+    implementation project(":litdmobile")
 
     // Tor
     implementation "com.msopentech.thali:universal:0.0.3"
@@ -343,7 +343,11 @@ apply from: file("../../node_modules/@react-native-community/cli-platform-androi
 
 protobuf {
     protoc {
-        artifact = "com.google.protobuf:protoc:21.0-rc-1"
+        if (osdetector.os == "osx") {
+            artifact = 'com.google.protobuf:protoc:4.0.0-rc-2:osx-x86_64'
+        } else {
+            artifact = 'com.google.protobuf:protoc:21.0-rc-1'
+        }
     }
     generateProtoTasks {
         all().each { task ->

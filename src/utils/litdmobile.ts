@@ -1,5 +1,5 @@
 import Log from "./log";
-const log = Log("utils/lndmobile.ts");
+const log = Log("utils/litdmobile.ts");
 
 export function checkLndStreamErrorResponse(name: string, event: any): Error | "EOF" | null {
   if (!event || typeof event !== "object") {

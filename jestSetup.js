@@ -15,12 +15,12 @@ jest.mock("react-native-document-picker", () => require("./mocks/react-native-do
 jest.mock("@react-native-community/geolocation", () => require("./mocks/@react-native-community/geolocation"));
 jest.mock("react-native-permissions", () => require("./mocks/react-native-permissions"));
 
-jest.mock("./src/lndmobile/index", () => require("./mocks/lndmobile/index"));
-jest.mock("./src/lndmobile/wallet", () => require("./mocks/lndmobile/wallet"));
-jest.mock("./src/lndmobile/channel", () => require("./mocks/lndmobile/channel"));
-jest.mock("./src/lndmobile/onchain", () => require("./mocks/lndmobile/onchain"));
-jest.mock("./src/lndmobile/autopilot", () => require("./mocks/lndmobile/autopilot"));
-jest.mock("./src/lndmobile/scheduled-sync", () => require("./mocks/lndmobile/scheduled-sync"));
+jest.mock("./src/litdmobile/index", () => require("./mocks/litdmobile/index"));
+jest.mock("./src/litdmobile/wallet", () => require("./mocks/litdmobile/wallet"));
+jest.mock("./src/litdmobile/channel", () => require("./mocks/litdmobile/channel"));
+jest.mock("./src/litdmobile/onchain", () => require("./mocks/litdmobile/onchain"));
+jest.mock("./src/litdmobile/autopilot", () => require("./mocks/litdmobile/autopilot"));
+jest.mock("./src/litdmobile/scheduled-sync", () => require("./mocks/litdmobile/scheduled-sync"));
 
 jest.mock("./src/utils/constants.ts", () => require("./mocks/utils/constants"));
 

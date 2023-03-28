@@ -3,18 +3,18 @@ import { Button, Body, Container, Header, Icon, Left, Title } from "native-base"
 import Content from "../../components/Content";
 import { TextInput, DeviceEventEmitter, Text } from "react-native";
 import Clipboard from "@react-native-community/clipboard";
-import { sendKeysendPayment, decodePaymentStatus, addInvoice, getNodeInfo, sendKeysendPayment2 } from "../../lndmobile/index";
+import { sendKeysendPayment, decodePaymentStatus, addInvoice, getNodeInfo, sendKeysendPayment2 } from "../../litdmobile/index";
 import Long from "long";
 import { hexToUint8Array, timeout, bytesToString, bytesToHexString } from "../../utils";
 import { routerrpc } from "../../../proto/router";
 import { useStoreState, useStoreActions } from "../../state/store";
-import { decodeInvoiceResult } from "../../lndmobile/wallet";
+import { decodeInvoiceResult } from "../../litdmobile/wallet";
 import { generateSecureRandom } from "react-native-securerandom";
 import { lnrpc } from "../../../proto/lightning";
-import { listChannels, getChanInfo, listPrivateChannels } from "../../lndmobile/channel";
+import { listChannels, getChanInfo, listPrivateChannels } from "../../litdmobile/channel";
 import QrCode from "../../components/QrCode";
 import { LndMobileEventEmitter } from "../../utils/event-listener";
-import { checkLndStreamErrorResponse } from "../../utils/lndmobile";
+import { checkLndStreamErrorResponse } from "../../utils/litdmobile";
 
 interface ILightningInfoProps {
   navigation: any;

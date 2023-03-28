@@ -2,7 +2,7 @@ import { waitFor } from "@testing-library/react-native";
 
 import { setItem, StorageItem } from "../../src/storage/app";
 import { initCommonStore } from "../utils";
-import { getInfoResponse } from "../../mocks/lndmobile/index";
+import { getInfoResponse } from "../../mocks/litdmobile/index";
 
 jest.setTimeout(20000);
 

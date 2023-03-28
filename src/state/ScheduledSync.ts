@@ -1,7 +1,7 @@
 import { NativeModules } from "react-native"
 import { Action, action, Thunk, thunk, computed, Computed } from "easy-peasy";
 import { StorageItem, getItemObject } from "../storage/app";
-import { WorkInfo } from "../lndmobile/LndMobile";
+import { WorkInfo } from "../litdmobile/LndMobile";
 import { IStoreInjections } from "./store";
 import { PLATFORM } from "../utils/constants";
 

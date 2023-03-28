@@ -76,9 +76,9 @@ ios/Pods
 macos/Pods
 
 # Lnd binaries
-android/lndmobile/Lndmobile.aar
-ios/Lndmobile.xcframework
-macos/Lndmobile.xcframework
+android/litdmobile/Litdmobile.aar
+ios/Litdmobile.xcframework
+macos/Litdmobile.xcframework
 
 # Web
 dist
